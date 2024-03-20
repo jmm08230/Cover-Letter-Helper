@@ -1,0 +1,61 @@
+bootJar { enabled = true }
+jar { enabled = false }
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // Database
+    implementation project(":domain")
+    runtimeOnly 'com.mysql:mysql-connector-j'
+}
+
+
+// React Build Code
+GString frontendDir = "${projectDir.parentFile.parentFile}/frontend"
+
+sourceSets {
+    main {
+        resources {
+            srcDirs = ["$projectDir/src/main/resources"]
+        }
+    }
+}
+
+processResources {
+    dependsOn "copyReactBuildFiles"
+}
+
+tasks.register('installReact', Exec) {
+    workingDir frontendDir
+    inputs.dir frontendDir
+    group = BasePlugin.BUILD_GROUP
+
+    if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
+        commandLine "npm.cmd", "audit", "fix"
+        commandLine 'npm.cmd', 'install'
+    } else {
+        commandLine "npm", "audit", "fix"
+        commandLine "npm", "install"
+//        commandLine "/opt/homebrew/bin/npm", "install"
+    }
+}
+
+tasks.register('buildReact', Exec) {
+    dependsOn "installReact"
+    workingDir frontendDir
+    inputs.dir frontendDir
+    group = BasePlugin.BUILD_GROUP
+    if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
+        commandLine "npm.cmd", "run-script", "build"
+    } else {
+//        commandLine "/opt/homebrew/bin/npm", "run-script", "build"
+        commandLine "npm", "run-script", "build"
+    }
+}
+
+tasks.register('copyReactBuildFiles', Copy) {
+    dependsOn "buildReact"
+    from "$frontendDir/build"
+    into "$projectDir/src/main/resources/static"
+}
