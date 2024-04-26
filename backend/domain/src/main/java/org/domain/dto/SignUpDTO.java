@@ -36,4 +36,6 @@ public class SignUpDTO {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd", iso = DateTimeFormat.ISO.DATE)
     private LocalDate birth;
+
+
 }
