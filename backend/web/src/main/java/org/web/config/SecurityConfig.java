@@ -7,10 +7,17 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.web.service.OAuth2Service;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+
+    private final OAuth2Service oAuth2Service;
+
+    public SecurityConfig(OAuth2Service oAuth2Service) {
+        this.oAuth2Service = oAuth2Service;
+    }
 
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder(){
@@ -37,6 +44,11 @@ public class SecurityConfig {
         http
                 .sessionManagement((session) -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+        http
+                .oauth2Login()
+                .defaultSuccessUrl("/oauth/loginfo")
+                .userInfoEndpoint()
+                .userService(oAuth2Service);
 
         return http.build();
     }
