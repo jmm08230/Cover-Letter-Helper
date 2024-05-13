@@ -34,7 +34,7 @@ public class CoverLetterController {
 
     @PatchMapping("/cover-letter/create-{userId}-cover-letter")
     public ResponseEntity<CoverLetterEntity> create(@RequestBody CoverLetterDTO dto) {
-        CoverLetterEntity created = coverLetterService.create(dto);
+        CoverLetterEntity created = coverLetterService.create(dto).toEntity();
         return (created != null) ?
                 ResponseEntity.status(HttpStatus.OK).body(created) :
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
@@ -42,7 +42,7 @@ public class CoverLetterController {
 
     @PatchMapping("/cover-letter/patch-{userId}-cover-letter")
     public ResponseEntity<Object> update(@PathVariable String userId, @RequestBody CoverLetterDTO dto) {
-        CoverLetterEntity updated = coverLetterService.update(userId, dto);
+        CoverLetterEntity updated = coverLetterService.update(userId, dto).toEntity();
         return (updated != null) ?
                 ResponseEntity.status(HttpStatus.OK).body(updated) :
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
