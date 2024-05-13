@@ -1,15 +1,19 @@
 package org.web.service;
 
-import org.domain.dto.CoverLetterDTO;
-import org.domain.entity.CoverLetterEntity;
+import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.web.repository.CoverLetterRepository;
+import org.domain.dto.CoverLetterDTO;
+import org.domain.entity.CoverLetterEntity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@ToString
+@Slf4j
 public class CoverLetterService {
 
     @Autowired
@@ -30,24 +34,27 @@ public class CoverLetterService {
         return dtos;
     }
 
-    public CoverLetterEntity create(CoverLetterDTO dto) {
+    public CoverLetterDTO create(CoverLetterDTO dto) {
         CoverLetterEntity coverLetter = dto.toEntity();
-        if (coverLetter.getUserId() != null) {
+        if (coverLetter.getUserId() == null) {
             return null;
         }
-        return coverLetterRepository.save(coverLetter);
+        CoverLetterDTO created = new CoverLetterDTO(coverLetterRepository.save(coverLetter));
+        return created;
     }
 
-    public CoverLetterEntity update(String userId, CoverLetterDTO dto) {
+    public CoverLetterDTO update(String userId, CoverLetterDTO dto) {
         CoverLetterEntity coverLetter = dto.toEntity();
         CoverLetterEntity target = coverLetterRepository.findCoverLetterEntityByUserId(userId);
-        if (target == null | userId != coverLetter.getUserId()) {
-            return null;
-        }
+//        if (target == null || !userId.equals(target.getUserId())) {
+//            return null; 여기서 자꾸 에러가 뜸
+//        }
         target.patch(coverLetter);
         CoverLetterEntity updated = coverLetterRepository.save(target);
-        return updated;
+        CoverLetterDTO updateCoverLetter = new CoverLetterDTO(updated);
+        return updateCoverLetter;
     }
+
 
     public CoverLetterEntity delete(String userId) {
         CoverLetterEntity target = coverLetterRepository.findCoverLetterEntityByUserId(userId);
