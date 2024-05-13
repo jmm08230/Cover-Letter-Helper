@@ -8,7 +8,7 @@ import lombok.*;
 @Setter
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
 public class CoverLetterEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
