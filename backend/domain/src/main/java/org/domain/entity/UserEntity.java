@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.Locale;
 
 @Entity
 @Getter
@@ -16,7 +17,7 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false)
-    private int id;
+    private Long id;
 
     private String userId;
     private String userName;
@@ -31,6 +32,16 @@ public class UserEntity {
     public UserEntity updateUser(String userName, String email) {
         this.userName = userName;
         this.email = email;
+
         return this;
+    }
+
+    public void update(String userName, String email, String password, String passwordCheck, String phone){
+
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+        this.passwordCheck = passwordCheck;
+        this.phone = phone;
     }
 }
