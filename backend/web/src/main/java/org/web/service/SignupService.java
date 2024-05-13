@@ -69,6 +69,7 @@ public class SignupService {
                 .userName(userName)
                 .email(email)
                 .password(bCryptPasswordEncoder.encode(password))
+                .passwordCheck(bCryptPasswordEncoder.encode(passwordCheck))
                 .phone(phone)
                 .birth(birth)
                 .provider("basic")
