@@ -1,0 +1,14 @@
+body {
+  font-family: "GowunDodum-Regular";
+}
+
+@font-face {
+  font-family: "GowunDodum-Regular";
+  font-weight: normal;
+  src: url("C:\Users\jmm08\OneDrive\바탕 화면\React\project\my-app\src\fonts\Jua-Regular.ttf") format("truetype");
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
