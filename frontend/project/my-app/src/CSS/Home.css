@@ -1,0 +1,346 @@
+  a.No_Id {
+    float: right;
+    color: gray;
+    padding: 0px;
+    margin-right: 30px; 
+    height: 20px;
+    text-decoration-line: none;
+  }
+
+  .No_Id:hover {
+    color: gray;
+  }
+  
+  img{
+    float: left;
+  }
+  
+.Register-text {
+  position: relative;
+  left: 50px;
+}
+
+  .Register-text:hover {
+    color: blue;
+  }
+  
+  hr {
+    display: block;
+    top: 200px;
+  }
+  
+  /* 여기서부터 Login_Page CSS */
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .wrapper {
+    position: static;
+    background-color: #E3EDF9;
+    width: 220.5vh;
+    height: 100vh;
+    display: absolute;
+    left: 200px;
+    overflow: hidden;
+  }
+  .container_home {
+    position: relative;
+    left: 860px;
+    top: 65px;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: -1px -1px 5px gray, 1px 1px 5px gray;
+    position: absolute;
+    width: 400px;
+    min-height: 60vh;
+    overflow: hidden;
+  }
+  form {
+    display: relative;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+  }
+  form input {
+    padding: 15px;
+    margin: 8px 0;
+    width: 300px;
+    border: 0;
+    outline: gray solid 2px;
+    border-radius: 5px;
+  }
+  
+  .subscript_id {
+    position: relative;
+    left: 2500px;
+  }
+  .subscript_pw {
+    position: relative;
+    left: 500px;
+  }
+  button {
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 15px 45px;
+    margin: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform 80ms ease-in;
+  }
+  .form_btn {
+    position: relative;
+    left: -15px;
+    background-color: #5163E0;
+    width: 300px;
+  }
+  .form_btn:active {
+    box-shadow: inset 1px 1px 2px #5163E0, inset -1px -1px 2px #fff;
+  }
+  .overlay_btn {
+    background-color: #5163E0;
+    color: #fff;
+    box-shadow: -5px -5px 10px #4A5ACC, 5px 5px 8px #364296;
+  }
+  
+  .social-links {
+    margin: 20px 0;
+  }
+  
+  .social-text-N {
+    color:white;
+  }
+  
+  form h1 {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 20px;
+    text-align: center;
+    color: #000;
+  }
+  
+  p {
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+  }
+  span {
+    font-size: 12px;
+    color: #000;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  .social-links div {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .social-links a {
+    color: #000;
+  }
+  
+  .social-logo {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+  }
+  
+  .social-btn-G {
+    position: relative;
+    right: -120px;
+    margin: 0px;
+  }
+
+  .N_login {
+    position: relative;
+    left: 105px;
+    top: 50px;
+  }
+  
+  label {
+    text-align: left;
+    width: 280px;
+  }
+  
+  div.divider-wrapper:before, .divider-wrapper:after {
+      content: "";
+      border-bottom: 1px solid #c2c8d0;
+      flex: 1 0 auto;
+      height: .5em;
+      margin: 0;
+  }
+  
+  .social-logo {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+  }
+  
+  .checkbox {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    outline: none;
+    width:15px;
+  }
+  
+  .Remember {
+    position: relative;
+    top: 1px;
+    right: 85px;
+  }
+  
+  .find-id {
+    font-size: 15px;
+  }
+  
+  .hr-container {
+      height: 100px;
+      margin-top: 10px; 
+      margin-bottom: 70px;
+  }
+  
+  .custom-hr1 {
+    position: absolute;
+    top: 340px;
+    left: 40px;
+    border-top: 2px solid #999;
+    width: 120px; 
+    margin: 0px;
+  }
+  
+  .custom-hr2 {
+    position: absolute;
+    top: 340px;
+    left: 240px;
+    border-top: 2px solid #999;
+    width: 120px; 
+    margin: 0px;
+  }
+  
+  .hr-sect {
+    position: relative;
+    left: 120px;
+    margin: 0px;
+    padding: 0px;
+      color: black;
+      font-size: 16px;
+  }
+  
+  .sign-in-container {
+    width: 100%;
+    height: 100%;
+    
+  }
+  
+  .Login_logo {
+  /* Group 2131 */
+    position: absolute;
+    text-align: center;
+    right: 63%;
+    height:100%;
+    width: 100%;
+    background-color: white;
+  }
+  
+  .insert id {
+    position: relative;
+  
+  }
+  
+  .hi_img {
+    position: relative;
+    left: 200px;
+  }
+  .hi_text {
+    position: relative;
+    left: -20px;
+  }
+  
+  .question {
+    position: relative;
+    right: 10px;
+    top: 70px;
+    text-align: center;
+  }
+  
+  .form_btn {
+    color: white;
+    position: relative;
+    left: -12px;
+    
+  }
+  
+  .left-pic {
+    position: absolute;
+    left: 00px;
+    height: 100vh;
+    width: 600px;
+  }
+  
+  .google_login {
+    position: relative;
+    right: -295px;
+    top: 100px;
+    border-radius: 10px 10px 10px 10px;
+    margin: 0px;
+    width: 320px;
+    height: 40px;
+    background-color: white;
+    color: gray;
+    outline: gray solid 1px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

@@ -1,0 +1,63 @@
+
+.wrapper_signup {
+    display: block;
+    margin: 0;
+    display: inline-block;
+    width: 98.9vw;
+    height: 695px;
+    background-color: #E3EDF9;
+    text-align: center;
+
+}
+.main_title {
+    position: relative;
+    top: 50px;
+    color:#70A4F7;
+    font-size: 70px;
+    font-weight: 1000;
+    margin-top: 100px;
+    
+}
+
+.out_container_signup {
+    position: relative;
+    text-align: center;
+    margin-top: 100px;
+    background-color: white;
+    left: 460px;
+    width: 600px;
+    height: 400px;
+    border-radius: 100px 100px 100px 100px;
+}
+.in_signup-container {
+    position: relative;
+    top: 50px;
+    height: 100px;
+}
+
+.ment {
+    position: relative;
+    margin: 50px;
+    left: 100px;
+    width: 300px;
+}
+
+.signup_fin_ment {
+    position: relative;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.start_btn {
+    position:relative;
+    left: -90px;
+    background-color: #3563E9;
+    color: white;
+    width: 300px;
+
+}
+
+.welcom_text {
+    color: gray;
+    font-size: 40px;
+}
